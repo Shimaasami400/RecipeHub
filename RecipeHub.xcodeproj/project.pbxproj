@@ -17,6 +17,8 @@
 		D44E66D92C6E684D001DD35A /* RecipeHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E66D82C6E684D001DD35A /* RecipeHubTests.swift */; };
 		D44E66E32C6E684D001DD35A /* RecipeHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E66E22C6E684D001DD35A /* RecipeHubUITests.swift */; };
 		D44E66E52C6E684D001DD35A /* RecipeHubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E66E42C6E684D001DD35A /* RecipeHubUITestsLaunchTests.swift */; };
+		D44E66F92C6E7588001DD35A /* SearchRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E66F82C6E7588001DD35A /* SearchRecipeViewController.swift */; };
+		D44E66FE2C6E8F5A001DD35A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E66FD2C6E8F5A001DD35A /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		D44E66DE2C6E684D001DD35A /* RecipeHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipeHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44E66E22C6E684D001DD35A /* RecipeHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeHubUITests.swift; sourceTree = "<group>"; };
 		D44E66E42C6E684D001DD35A /* RecipeHubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeHubUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D44E66F82C6E7588001DD35A /* SearchRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeViewController.swift; sourceTree = "<group>"; };
+		D44E66FD2C6E8F5A001DD35A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,10 @@
 		D44E66BD2C6E684B001DD35A /* RecipeHub */ = {
 			isa = PBXGroup;
 			children = (
+				D44E66FB2C6E8F34001DD35A /* Welcome */,
+				D44E66FA2C6E75E8001DD35A /* Search */,
+				D44E66F22C6E6E8D001DD35A /* Model */,
+				D44E66F12C6E6E85001DD35A /* Home */,
 				D44E66BE2C6E684B001DD35A /* AppDelegate.swift */,
 				D44E66C02C6E684B001DD35A /* SceneDelegate.swift */,
 				D44E66C22C6E684B001DD35A /* ViewController.swift */,
@@ -128,6 +136,68 @@
 				D44E66E42C6E684D001DD35A /* RecipeHubUITestsLaunchTests.swift */,
 			);
 			path = RecipeHubUITests;
+			sourceTree = "<group>";
+		};
+		D44E66F12C6E6E85001DD35A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D44E66F22C6E6E8D001DD35A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D44E66F52C6E6EEA001DD35A /* Remote */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D44E66F32C6E6E99001DD35A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D44E66F82C6E7588001DD35A /* SearchRecipeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D44E66F42C6E6EA0001DD35A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D44E66F52C6E6EEA001DD35A /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		D44E66FA2C6E75E8001DD35A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D44E66F42C6E6EA0001DD35A /* ViewModel */,
+				D44E66F32C6E6E99001DD35A /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		D44E66FB2C6E8F34001DD35A /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				D44E66FC2C6E8F3F001DD35A /* View */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		D44E66FC2C6E8F3F001DD35A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D44E66FD2C6E8F5A001DD35A /* WelcomeViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +331,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D44E66F92C6E7588001DD35A /* SearchRecipeViewController.swift in Sources */,
 				D44E66C32C6E684B001DD35A /* ViewController.swift in Sources */,
 				D44E66C92C6E684B001DD35A /* RecipeHub.xcdatamodeld in Sources */,
+				D44E66FE2C6E8F5A001DD35A /* WelcomeViewController.swift in Sources */,
 				D44E66BF2C6E684B001DD35A /* AppDelegate.swift in Sources */,
 				D44E66C12C6E684B001DD35A /* SceneDelegate.swift in Sources */,
 			);

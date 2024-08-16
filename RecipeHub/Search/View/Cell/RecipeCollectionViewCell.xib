@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="RecipeCollectionViewCell" customModule="RecipeHub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="176" height="220"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="176" height="220"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coupon" translatesAutoresizingMaskIntoConstraints="NO" id="57N-xx-BWf">
+                        <rect key="frame" x="0.0" y="0.0" width="176" height="160"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="160" id="IMZ-Ry-Zzf"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waE-WY-A5D">
+                        <rect key="frame" x="1" y="168" width="175" height="19.666666666666657"/>
+                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8da-SN-Q1n">
+                        <rect key="frame" x="69" y="190" width="39" height="17"/>
+                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="12"/>
+                        <color key="textColor" red="0.82352948189999997" green="0.29803922770000002" blue="0.270588249" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="57N-xx-BWf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ASi-PN-zyD"/>
+                <constraint firstItem="57N-xx-BWf" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="BRK-xE-fMk"/>
+                <constraint firstItem="8da-SN-Q1n" firstAttribute="centerX" secondItem="waE-WY-A5D" secondAttribute="centerX" id="EDB-iC-0XN"/>
+                <constraint firstItem="waE-WY-A5D" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="Era-nI-mBv"/>
+                <constraint firstItem="57N-xx-BWf" firstAttribute="trailing" secondItem="waE-WY-A5D" secondAttribute="trailing" id="Pye-cA-r9o"/>
+                <constraint firstItem="waE-WY-A5D" firstAttribute="top" secondItem="57N-xx-BWf" secondAttribute="bottom" constant="8" id="TgN-30-e6w"/>
+                <constraint firstItem="57N-xx-BWf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bcy-fB-MuK"/>
+                <constraint firstItem="8da-SN-Q1n" firstAttribute="top" secondItem="waE-WY-A5D" secondAttribute="bottom" constant="2.3333333333333428" id="o5T-yL-dcE"/>
+                <constraint firstAttribute="trailing" secondItem="waE-WY-A5D" secondAttribute="trailing" id="tJb-DC-0mo"/>
+            </constraints>
+            <size key="customSize" width="176" height="220"/>
+            <connections>
+                <outlet property="recipeImage" destination="57N-xx-BWf" id="AeF-Ut-en8"/>
+                <outlet property="recipeName" destination="waE-WY-A5D" id="Mal-mQ-C0m"/>
+                <outlet property="recipeSource" destination="8da-SN-Q1n" id="fgP-1e-lr3"/>
+            </connections>
+            <point key="canvasLocation" x="365" y="-70"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="coupon" width="675" height="371"/>
+    </resources>
+</document>

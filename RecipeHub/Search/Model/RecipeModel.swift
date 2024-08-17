@@ -23,5 +23,14 @@ struct Recipe: Codable {
     let calories: Double
     let totalWeight: Double
     let totalTime: Double
+    let healthLabels: [String]?
+    let ingredients: [Ingredient]? 
+    
 }
+
+struct Ingredient: Codable {
+    let text: String
+    let weight: Double
+}
+
 

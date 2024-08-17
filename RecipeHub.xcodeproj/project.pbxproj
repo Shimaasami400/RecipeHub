@@ -27,6 +27,8 @@
 		D44E67082C6FC3C2001DD35A /* RecipeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D44E67072C6FC3C2001DD35A /* RecipeCollectionViewCell.xib */; };
 		D44E67092C6FC3C2001DD35A /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E67062C6FC3C2001DD35A /* RecipeCollectionViewCell.swift */; };
 		D44E670D2C6FDB64001DD35A /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E670C2C6FDB64001DD35A /* RecipeDetailsViewController.swift */; };
+		D44E67162C70F170001DD35A /* RecipeCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E67142C70F170001DD35A /* RecipeCategoryCollectionViewCell.swift */; };
+		D44E67172C70F170001DD35A /* RecipeCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D44E67152C70F170001DD35A /* RecipeCategoryCollectionViewCell.xib */; };
 		F23B395A8BBC45CE48970CDC /* Pods_RecipeHubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91054BE4B924878FBD61C01 /* Pods_RecipeHubTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,8 @@
 		D44E67062C6FC3C2001DD35A /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		D44E67072C6FC3C2001DD35A /* RecipeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCollectionViewCell.xib; sourceTree = "<group>"; };
 		D44E670C2C6FDB64001DD35A /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
+		D44E67142C70F170001DD35A /* RecipeCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		D44E67152C70F170001DD35A /* RecipeCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		F91054BE4B924878FBD61C01 /* Pods_RecipeHubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeHubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FECCACA53CB01961C3C4D260 /* Pods-RecipeHub-RecipeHubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeHub-RecipeHubUITests.debug.xcconfig"; path = "Target Support Files/Pods-RecipeHub-RecipeHubUITests/Pods-RecipeHub-RecipeHubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -241,6 +245,8 @@
 			children = (
 				D44E67062C6FC3C2001DD35A /* RecipeCollectionViewCell.swift */,
 				D44E67072C6FC3C2001DD35A /* RecipeCollectionViewCell.xib */,
+				D44E67142C70F170001DD35A /* RecipeCategoryCollectionViewCell.swift */,
+				D44E67152C70F170001DD35A /* RecipeCategoryCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -384,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D44E67082C6FC3C2001DD35A /* RecipeCollectionViewCell.xib in Resources */,
+				D44E67172C70F170001DD35A /* RecipeCategoryCollectionViewCell.xib in Resources */,
 				D44E66CB2C6E684D001DD35A /* Assets.xcassets in Resources */,
 				D44E66CE2C6E684D001DD35A /* Base in Resources */,
 				D44E66C62C6E684B001DD35A /* Base in Resources */,
@@ -520,6 +527,7 @@
 				D44E67042C6F94CA001DD35A /* SearchRecipeViewModel.swift in Sources */,
 				D44E66C92C6E684B001DD35A /* RecipeHub.xcdatamodeld in Sources */,
 				D44E67002C6F9455001DD35A /* RecipeNetworkService.swift in Sources */,
+				D44E67162C70F170001DD35A /* RecipeCategoryCollectionViewCell.swift in Sources */,
 				D44E66FE2C6E8F5A001DD35A /* WelcomeViewController.swift in Sources */,
 				D44E67022C6F94A1001DD35A /* RecipeModel.swift in Sources */,
 				D44E66BF2C6E684B001DD35A /* AppDelegate.swift in Sources */,

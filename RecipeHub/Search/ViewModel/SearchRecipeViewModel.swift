@@ -14,6 +14,7 @@ class SearchRecipeViewModel {
     private let disposeBag = DisposeBag()
     
     let recipes: BehaviorRelay<[Recipe]> = BehaviorRelay(value: [])
+    let filteredRecipes: BehaviorRelay<[Recipe]> = BehaviorRelay(value: [])
     let isLoading: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     let errorMessage: PublishSubject<String?> = PublishSubject()
     
@@ -31,6 +32,7 @@ class SearchRecipeViewModel {
             switch result {
             case .success(let recipes):
                 self.recipes.accept(recipes)
+                self.filteredRecipes.accept(recipes)
             case .failure(let error):
                 self.errorMessage.onNext(error.localizedDescription)
             }

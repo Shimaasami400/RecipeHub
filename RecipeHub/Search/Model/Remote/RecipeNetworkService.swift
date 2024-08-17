@@ -20,7 +20,7 @@ class RecipeNetworkService: RecipeServiceProtocol {
             "type": "public",
             "q": query,
             "app_id": "d73fe640",
-            "app_key": "d38544eda2d2a60a24b190fec20fd98f"
+            "app_key": "28d26718185d8b400ab1de1c14b6dc70"
         ]
         
         AF.request(url, parameters: parameters).validate().responseDecodable(of: RecipeResponse.self) { response in

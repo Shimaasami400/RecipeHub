@@ -11,7 +11,6 @@ class RecipeDetailsViewController: UIViewController {
     
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var recipeImage: UIImageView!
-    
     @IBOutlet weak var stackView: UIStackView!
     
     var selectedRecipe: Recipe?
@@ -21,6 +20,7 @@ class RecipeDetailsViewController: UIViewController {
         
         setImageAppearance()
         setStackView()
+        
         
         if let recipe = selectedRecipe {
             recipeName.text = recipe.label
@@ -35,58 +35,66 @@ class RecipeDetailsViewController: UIViewController {
         recipeImage.layer.cornerRadius = 20
         recipeImage.clipsToBounds = true
         recipeImage.layer.borderWidth = 1.0
-        recipeImage.layer.borderColor = UIColor.lightGray.cgColor
+        recipeImage.layer.borderColor = UIColor(red: 226/255, green: 62/255, blue: 62/255, alpha: 1.0).cgColor
+        //recipeImage.layer.borderColor = UIColor.lightGray.cgColor
         recipeImage.contentMode = .scaleToFill
         
     }
-    private func setStackView() {
-            stackView.layer.cornerRadius = 20
-            stackView.clipsToBounds = true
-            stackView.backgroundColor = UIColor.systemGray6
-            
-            guard let recipe = selectedRecipe else { return }
-            
-            let totalTimeTxt = "\(recipe.totalTime) Min"
-            let totalWeightTxt = "\(recipe.totalWeight) g"
-            let totalCalTxt = "\(recipe.calories) cal"
-            
-            let timeView = createItemView(iconName: "clock", text: totalTimeTxt)
-            let stepsView = createItemView(iconName: "weight", text: totalWeightTxt)
-            let difficultyView = createItemView(iconName: "calories", text: totalCalTxt)
-            
-            stackView.addArrangedSubview(timeView)
-            stackView.addArrangedSubview(stepsView)
-            stackView.addArrangedSubview(difficultyView)
-        }
-        
-        private func createItemView(iconName: String, text: String) -> UIView {
-            let itemStackView = UIStackView()
-            itemStackView.axis = .vertical
-            itemStackView.alignment = .center
-            itemStackView.spacing = 3
-            
-            let imageView = UIImageView(image: UIImage(named: iconName))
-            imageView.contentMode = .scaleAspectFit
-            imageView.tintColor = .systemBlue
-            
-            imageView.translatesAutoresizingMaskIntoConstraints = false
-            imageView.widthAnchor.constraint(equalToConstant: 38).isActive = true
-            imageView.heightAnchor.constraint(equalToConstant: 38).isActive = true
-        
-            let label = UILabel()
-            label.text = text
-            label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-            label.textColor = .black
-            label.textAlignment = .center
-            
-            itemStackView.addArrangedSubview(imageView)
-            itemStackView.addArrangedSubview(label)
-            
-            return itemStackView
-                }
     
+    private func setStackView() {
+        
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.alignment = .center
+        stackView.spacing = 20
+
+        stackView.backgroundColor = .white
+        stackView.layer.cornerRadius = 20
+        stackView.layer.borderWidth = 1.0
+        stackView.layer.borderColor = UIColor(red: 226/255, green: 62/255, blue: 62/255, alpha: 1.0).cgColor
+        stackView.clipsToBounds = true
+
+        guard let recipe = selectedRecipe else { return }
+
+        let totalTimeTxt = String(format: "%.1f min", recipe.totalTime)
+        let totalWeightTxt = String(format: "%.1f g", recipe.totalWeight)
+        let difficultyTxt = String(format: "%.1f kcal", recipe.calories)
+
+        let timeView = createItemView(iconName: "clock", text: totalTimeTxt)
+        let stepsView = createItemView(iconName: "weight", text: totalWeightTxt)
+        let difficultyView = createItemView(iconName: "calories", text: difficultyTxt)
+
+        stackView.addArrangedSubview(timeView)
+        stackView.addArrangedSubview(stepsView)
+        stackView.addArrangedSubview(difficultyView)
+    }
+
+    private func createItemView(iconName: String, text: String) -> UIView {
+        let itemStackView = UIStackView()
+        itemStackView.axis = .vertical
+        itemStackView.alignment = .center
+        itemStackView.spacing = 6
+
+        let imageView = UIImageView(image: UIImage(named: iconName))
+            imageView.contentMode = .scaleAspectFit
+
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+
+        let label = UILabel()
+        label.text = text
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.textColor = .black
+        label.textAlignment = .center
+
+        itemStackView.addArrangedSubview(imageView)
+        itemStackView.addArrangedSubview(label)
+
+        return itemStackView
+    }
+
     @IBAction func goBack(_ sender: Any) {
-        //self.dismiss(animated: true, completion: nil)
         navigationController?.popViewController(animated: true)
     }
 

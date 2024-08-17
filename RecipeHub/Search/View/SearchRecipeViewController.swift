@@ -27,12 +27,12 @@ class SearchRecipeViewController: UIViewController, UISearchBarDelegate, UIColle
         // Do any additional setup after loading the view.
         recipeSearchBar.delegate = self
         
-        configureCollectionView()
-        customizeSearchBar()
+        setCollectionView()
+        setSearchBar()
         setupBindings()
         
     }
-    private func configureCollectionView() {
+    private func setCollectionView() {
         
             let layout = UICollectionViewFlowLayout()
             layout.minimumInteritemSpacing = 5
@@ -47,7 +47,7 @@ class SearchRecipeViewController: UIViewController, UISearchBarDelegate, UIColle
             collectionView.delegate = self
         }
     
-    private func customizeSearchBar() {
+    private func setSearchBar() {
         recipeSearchBar.backgroundImage = UIImage()
         
         if let textField = recipeSearchBar.value(forKey: "searchField") as? UITextField {

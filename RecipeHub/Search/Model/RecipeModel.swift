@@ -15,7 +15,7 @@ struct RecipeHit: Codable {
     let recipe: Recipe
 }
 
-struct Recipe: Codable {
+struct Recipe: Codable , Equatable{
     let label: String
     let image: String
     let source: String
@@ -24,13 +24,8 @@ struct Recipe: Codable {
     let totalWeight: Double
     let totalTime: Double
     let healthLabels: [String]?
-    let ingredients: [Ingredient]? 
     
 }
 
-struct Ingredient: Codable {
-    let text: String
-    let weight: Double
-}
 
 

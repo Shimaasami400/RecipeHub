@@ -18,10 +18,7 @@ class SearchRecipeViewController: UIViewController, UISearchBarDelegate, UIColle
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
-    
-    private let noResultsImageView = UIImageView()
-    private let noResultsLabel = UILabel()
-    
+        
     private let noInternetImageView = UIImageView()
     private let noInternetLabel = UILabel()
     private var reachability: Reachability?
@@ -42,7 +39,6 @@ class SearchRecipeViewController: UIViewController, UISearchBarDelegate, UIColle
         setCategoryCollectionView()
         setSearchBar()
         setupBindings()
-        //setupNoResultsUI()
         setupNoInternetUI()
         setupReachability()
         
@@ -142,8 +138,6 @@ class SearchRecipeViewController: UIViewController, UISearchBarDelegate, UIColle
             .subscribe(onNext: { [weak self] recipes in
                 guard let self = self else { return }
                 let isEmpty = recipes.isEmpty
-                self.noResultsImageView.isHidden = !isEmpty
-                self.noResultsLabel.isHidden = !isEmpty
                 self.collectionView.isHidden = isEmpty
             })
             .disposed(by: disposeBag)
@@ -165,37 +159,6 @@ class SearchRecipeViewController: UIViewController, UISearchBarDelegate, UIColle
         }
     }
     
-    //    private func setupNoResultsUI() {
-    //        if reachability?.connection != .unavailable{
-    //            noResultsImageView.image = UIImage(named: "no-results")
-    //            noResultsImageView.contentMode = .scaleAspectFit
-    //            noResultsImageView.isHidden = true
-    //            
-    //            noResultsLabel.text = "No elements found"
-    //            noResultsLabel.textAlignment = .center
-    //            noResultsLabel.textColor = .gray
-    //            noResultsLabel.isHidden = true
-    //            
-    //            view.addSubview(noResultsImageView)
-    //            view.addSubview(noResultsLabel)
-    //            
-    //            noResultsImageView.translatesAutoresizingMaskIntoConstraints = false
-    //            noResultsLabel.translatesAutoresizingMaskIntoConstraints = false
-    //            
-    //            NSLayoutConstraint.activate([
-    //                noResultsImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-    //                noResultsImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
-    //                noResultsImageView.widthAnchor.constraint(equalToConstant: 150),
-    //                noResultsImageView.heightAnchor.constraint(equalToConstant: 150),
-    //                
-    //                noResultsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-    //                noResultsLabel.topAnchor.constraint(equalTo: noResultsImageView.bottomAnchor, constant: 10)
-    //            ])
-    //        }else {
-    //            
-    //        }
-    //    }
-    
     private func setupNoInternetUI() {
         
         noInternetImageView.image = UIImage(named: "no-connection")
@@ -210,7 +173,6 @@ class SearchRecipeViewController: UIViewController, UISearchBarDelegate, UIColle
         view.addSubview(noInternetImageView)
         view.addSubview(noInternetLabel)
         
-        // Set up constraints
         noInternetImageView.translatesAutoresizingMaskIntoConstraints = false
         noInternetLabel.translatesAutoresizingMaskIntoConstraints = false
         
